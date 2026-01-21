@@ -134,10 +134,5 @@ def predict_heatwave():
 
     return render_template('heatwave_index.html')
 
-# Weather Route
-@app.route('/weather', methods=['GET'])
-def weather():
-    return render_template('weather.html')
-
 if __name__ == '__main__':
     app.run(debug=True)

@@ -3,13 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 }
 
 /* Body styling */
 body {
-    background: linear-gradient(135deg, #1c1c1c, #2c3e50); /* Gradient background */
-    color: #ffffff; /* Light text */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #e8e8e8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,10 +20,12 @@ body {
 
 /* Main container */
 .container {
-    background-color: #282828; /* Slightly lighter dark background */
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Subtle shadow */
-    padding: 30px 40px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
     width: 100%;
     max-width: 500px;
     text-align: center;
@@ -31,92 +33,120 @@ body {
 
 /* Heading */
 h1 {
-    font-size: 2.5rem;
-    color: #ff6f61; /* Vibrant coral */
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    font-weight: 700;
 }
 
 /* Form labels */
 label {
     display: block;
-    margin: 15px 0 5px;
+    margin: 18px 0 8px;
     text-align: left;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ecf0f1;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e8e8e8;
+    letter-spacing: 0.5px;
 }
 
 /* Input fields */
 input {
     width: 100%;
-    padding: 12px;
+    padding: 12px 15px;
     margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #34495e; /* Subtle dark border */
-    background: #3c3c3c; /* Darker input background */
-    color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #e8e8e8;
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 input:focus {
-    border-color: #ff6f61; /* Coral border on focus */
+    border-color: #667eea;
     outline: none;
-    background-color: #444444;
+    background-color: rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input::placeholder {
+    color: rgba(232, 232, 232, 0.5);
 }
 
 /* Button styling */
 button {
-    background-color: #ff6f61; /* Coral button */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #ffffff;
     border: none;
-    padding: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    padding: 14px 20px;
+    font-size: 1.05rem;
+    font-weight: 700;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    letter-spacing: 0.5px;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #ff3d3d; /* Darker coral */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+button:active {
+    transform: translateY(-1px);
 }
 
 /* Result box */
 #result {
-    margin-top: 20px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 8px;
+    margin-top: 25px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #e8e8e8;
 }
 
 /* Result states */
 .heatwave-yes {
-    color: #e74c3c; /* Bright red */
-    background-color: #ffcfcf; /* Soft red background */
+    color: #ff6b6b;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 107, 107, 0.1));
+    border-color: rgba(255, 107, 107, 0.3);
 }
 
 .heatwave-no {
-    color: #27ae60; /* Green */
-    background-color: #d4efdf; /* Light green background */
+    color: #51cf66;
+    background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(81, 207, 102, 0.1));
+    border-color: rgba(81, 207, 102, 0.3);
 }
 
 .heatwave-error {
-    color: #f39c12; /* Gold for errors */
-    background-color: #fef9e7; /* Soft yellow background */
+    color: #ffa94d;
+    background: linear-gradient(135deg, rgba(255, 169, 77, 0.15), rgba(255, 169, 77, 0.1));
+    border-color: rgba(255, 169, 77, 0.3);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
     .container {
-        padding: 20px;
+        padding: 25px;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     button {
